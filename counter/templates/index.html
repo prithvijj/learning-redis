@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Counter</title>
+</head>
+<body>
+    <h1>Counter: {{ .Counter }}</h1>
+    <form action="/increment" method="POST">
+        <button type="submit">Increment Counter</button>
+    </form>
+</body>
+</html>
