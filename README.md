@@ -7,7 +7,9 @@
 - [x] Counter (Inc / Using some Gin too)
 - [x] Likes of a given post (SAdd, SMembers)
 - [x] Redis Hash (HSET, HGETALL, HLEN)
-
+- [x] Real Time notifications (using Server Sent Events, Publish, Subscribe)
+- [ ]
+- [ ]
 
 Running Redis using Docker
 
