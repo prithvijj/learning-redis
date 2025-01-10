@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redis Hash Management</title>
+</head>
+<body>
+    <h1>Redis Hash Management</h1>
+
+    <!-- Display error message if any -->
+    {{ if .error }}
+    <p style="color: red;">{{ .error }}</p>
+    {{ end }}
+
+    <!-- Display the hash data -->
+    <h2>Hash Data ({{ .fieldCount }} fields)</h2>
+    <ul>
+        {{ range $key, $value := .hashData }}
+        <li>{{ $key }}: {{ $value }}</li>
+        {{ end }}
+    </ul>
+
+    <!-- Form to add a new key-value pair -->
+    <h2>Add Key-Value Pair</h2>
+    <form action="/add" method="post">
+        <input type="text" name="key" placeholder="Enter key" >
+        <input type="text" name="value" placeholder="Enter value" >
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

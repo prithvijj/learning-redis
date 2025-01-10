@@ -6,6 +6,9 @@
 - [x] LeaderBoard (ZAdd, ZRevRangeWithScores)
 - [x] Counter (Inc / Using some Gin too)
 - [x] Likes of a given post (SAdd, SMembers)
+- [x] Redis Hash (HSET, HGETALL, HLEN)
+
+
 Running Redis using Docker
 
 ```
