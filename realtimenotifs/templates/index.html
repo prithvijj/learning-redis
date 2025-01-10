@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Notifications</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #notifications { margin-top: 20px; }
+        .notification { margin: 10px 0; padding: 10px; border: 1px solid #ddd; background: #e63e3e; }
+    </style>
+</head>
+<body>
+    <h1>Real-Time Notifications</h1>
+
+    <!-- Notification Form -->
+    <form id="notify-form" method="post" action="/notify">
+        <input type="text" name="message" placeholder="Enter notification message" required>
+        <button type="submit">Send Notification</button>
+    </form>
+
+    <!-- Notification Area -->
+    <div id="notifications">
+        <h2>Incoming Notifications</h2>
+    </div>
+
+    <script>
+        // Establish an SSE connection
+        const eventSource = new EventSource('/stream');
+
+        eventSource.onmessage = function(event) {
+            const notificationArea = document.getElementById('notifications');
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = event.data;
+            notificationArea.appendChild(notification);
+        };
+
+        // Prevent default form submission for instant feedback
+        document.getElementById('notify-form').onsubmit = function(e) {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            fetch('/notify', {
+                method: 'POST',
+                body: formData
+            }).then(response => {
+                if (response.ok) {
+                    e.target.reset();
+                }
+            });
+        };
+    </script>
+</body>
+</html>
