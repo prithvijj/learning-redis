@@ -5,7 +5,7 @@
 - [x] Event Logs (Rpush, LRange)
 - [x] LeaderBoard (ZAdd, ZRevRangeWithScores)
 - [x] Counter (Inc / Using some Gin too)
-
+- [x] Likes of a given post (SAdd, SMembers)
 Running Redis using Docker
 
 ```

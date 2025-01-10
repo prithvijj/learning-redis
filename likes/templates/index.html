@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Likes</title>
+</head>
+<body>
+    <h1>Post Likes</h1>
+
+    <!-- Display error message if any -->
+    {{ if .error }}
+    <p style="color: red;">{{ .error }}</p>
+    {{ end }}
+
+    <!-- Display the list of users -->
+    <ul>
+        {{ range .users }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    <!-- Form to add a user -->
+    <form action="/like" method="post">
+        <input type="text" name="user" placeholder="Enter user name" >
+        <button type="submit">Like</button>
+    </form>
+</body>
+</html>
