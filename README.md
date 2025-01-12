@@ -8,7 +8,7 @@
 - [x] Likes of a given post (SAdd, SMembers)
 - [x] Redis Hash (HSET, HGETALL, HLEN)
 - [x] Real Time notifications (using Server Sent Events, Publish, Subscribe)
-- [ ]
+- [x] Temporary URL (using SET, and TTL)
 - [ ]
 
 Running Redis using Docker
