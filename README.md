@@ -9,7 +9,7 @@
 - [x] Redis Hash (HSET, HGETALL, HLEN)
 - [x] Real Time notifications (using Server Sent Events, Publish, Subscribe)
 - [x] Temporary URL (using SET, and TTL)
-- [ ]
+- [x] Uploading image and storing as bas64 (SET, GET)
 
 Running Redis using Docker
 
